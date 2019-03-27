@@ -585,8 +585,8 @@ DBSCAN, while having sub-\ :math:`O(n^2)` complexity, can't achieve
 :math:`O(n \log(n))` at this dataset dimension, and start to curve
 upward precipitously. Finally it demonstrates again how much of a
 difference implementation can make: the sklearn implementation of
-K-Means is far better than the scipy implementation. Since HDBSCAN
-clustering is a lot better than K-Means (unless you have good reasons to
+K-Means is far better than the scipy implementation. It must be noticed that the higher sklearn kmean performance is also gained from the fact that kmean scipy will run the algorithm for 20 iterations by default, while sklearn will run it only for 10 iterations. 
+Since HDBSCAN clustering is a lot better than K-Means (unless you have good reasons to
 assume that the clusters partition your data and are all drawn from
 Gaussian distributions) and the scaling is still pretty good I would
 suggest that unless you have a truly stupendous amount of data you wish
